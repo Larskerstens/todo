@@ -1,0 +1,80 @@
+@use "./base/mixins" as *;
+@use "./base/variables" as *;
+@use "./base/reset";
+@use "./base/fonts";
+@import "../fonts/icon/css/icon.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 300;
+  font-size: 18px;
+  font-family: Roboto, Helvetica, serif;
+  background-color: $bodybg;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1100px;
+  width: 30%;
+  margin: 20px auto;
+}
+
+.todoApp {
+  &__form {
+    background-color: $green;
+    padding: 1em 0 1em 1em;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    &__input {
+      padding: 1em;
+      background-color: rgba($color: $white, $alpha: 0.3);
+      color: $white;
+      border: none;
+      border-radius: 5px;
+      width: 90%;
+    }
+    &__button {
+      margin-left: -30px;
+      display: inline-block;
+      left: 90px;
+      padding: 0.7em 1em;
+      color: $green;
+      background-color: $white;
+      border-radius: 50%;
+    }
+  }
+  &__list {
+    display: inline;
+    &__item {
+      display: flex;
+      align-items: center;
+      padding: 1em;
+      margin-bottom: 10px;
+      background-color: $white;
+      border-radius: 5px;
+      .text {
+        margin-right: auto;
+      }
+      .icon {
+        padding: 0px 7px;
+        margin: 2px;
+        color: $grey;
+        &:nth-child(2) {
+          border-right: 1px solid $grey;
+        }
+        &--remove:hover {
+          color: red;
+        }
+        &--check:hover {
+          color: $green;
+        }
+      }
+    }
+  }
+}
